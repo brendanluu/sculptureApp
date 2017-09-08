@@ -7,7 +7,7 @@ var socket = require('socket.io');
 var app = express();
 app.use(express.static(__dirname + "/"));
 
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 4000
 
 var server = http.createServer(app);
 server.listen(port);
@@ -24,7 +24,10 @@ var io = socket(server);
 io.on('connection', function(socket){
   console.log('made socket connection',socket.id);
 
-  socket.on('chat',function(data){
-    io.sockets.emit('chat',data);
+  socket.on('show1',function(data){
+    io.sockets.emit('show1',data);
+  });
+  socket.on('show2',function(data){
+    io.sockets.emit('show2',data);
   });
 });
