@@ -1,4 +1,4 @@
-var https = require("https")
+var http = require("http")
 var express = require('express');
 var socket = require('socket.io');
 
@@ -9,7 +9,7 @@ app.use(express.static(__dirname + "/"));
 
 var port = process.env.PORT || 4000
 
-var server = https.createServer(app);
+var server = http.createServer(app);
 server.listen(port);
 
 
