@@ -25,9 +25,9 @@ io.on('connection', function(socket){
   console.log('made socket connection',socket.id);
 
   socket.on('show1',function(data){
-    io.sockets.emit('show1',data);
+    io.emit('show1',data);
   });
   socket.on('show2',function(data){
-    io.sockets.emit('show2',data);
+    io.emit('show2',data);
   });
 });
