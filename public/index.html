@@ -4,10 +4,93 @@
     <meta charset="utf-8">
     <title>SculpExhibit</title>
     <script src=https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js></script>
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <div id="mario-chat">
+    <!-- include aframe -->
+    <!-- include aframe -->
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <!-- <script src="build/aframe-ar.js"></script> -->
+
+    <!-- to load .gltf model -->
+    <script src="http://cdn.rawgit.com/donmccurdy/aframe-extras/v3.10.0/dist/aframe-extras.min.js"></script>
+    <!-- orbit controls -->
+        <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.6/dist/aframe-orbit-controls-component.min.js"></script>
+        <!-- mouse cursor click-->
+        <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+
+
+    <!-- Just Added -->
+    <!-- <script>
+        function initElement() {
+          var trigger1 = document.getElementById("button1");
+          trigger1.onclick = showModel1;
+
+    			var trigger2 = document.getElementById("button2");
+          trigger2.onclick = showModel2;
+        };
+
+        function showModel1(event) {
+    			console.log("1");
+    			var sceneEl1 = document.querySelector('a-scene');
+    	    var sculpture1 = sceneEl1.querySelector('#sculpture1');
+    			var sculpture2 = sceneEl1.querySelector('#sculpture2');
+    			sculpture1.setAttribute('visible', true);
+    			sculpture2.setAttribute('visible', false);
+        };
+    		function showModel2(event) {
+    			console.log("2");
+    			var sceneEl2 = document.querySelector('a-scene');
+    			var sculpture1 = sceneEl2.querySelector('#sculpture1');
+    	    var sculpture2 = sceneEl2.querySelector('#sculpture2');
+    			sculpture1.setAttribute('visible', false);
+    			sculpture2.setAttribute('visible', true);
+        };
+    </script> -->
+
+    <link rel="stylesheet" href="style.css">
+
+    	</head>
+
+      <body onload="initElement();">
+
+        <a-scene vr-mode-ui="false">
+
+          <a-entity id="camera"
+              camera="fov: 80; zoom: 1;"
+              position="0 0 5"
+              mouse-cursor
+              orbit-controls="
+                  autoRotate: false;
+                  target: #model;
+                  enableDamping: true;
+                  dampingFactor: 0.125;
+                  rotateSpeed:0.25;
+                  minDistance:1;
+                  maxDistance:100;
+                  ">
+          </a-entity>
+
+    			<a-entity light="" position="-6.408 2.524 6.279"></a-entity>
+    			<a-entity light="" position="6.055 2.524 6.279"></a-entity>
+    			<a-entity light="" position="-0.129 2.524 -8.146"></a-entity>
+
+
+
+      <a-entity id="model" scale="1 1 1">
+
+    		<!-- <a-entity gltf-model-next="src: url(models/scene.gltf);" position='0 0 0' rotation='0 90 0' scale='20 20 20'></a-entity> -->
+    		<a-entity id="sculpture1" gltf-model-next="models/tiberius/scene.gltf" position="-1.111 -0.829 1.193" rotation="-14.954198452914486 0 0"></a-entity>
+    		<a-entity id="sculpture2" visible="false" gltf-model-next="models/dauguste/scene.gltf" position="0.239 -0.346 -1.049" rotation="-2.4637185190625397 41.08107391088002 -6.64631042351755" scale="0.012 0.012 0.012"></a-entity>
+      </a-entity>
+
+
+          <a-sky
+                 color="black">
+          </a-sky>
+
+        </a-scene>
+
+    		<button id="button1" cursor-listener-1 type="button">Sculpture 1</button>
+    		<button id="button2" cursor-listener-1 type="button">Sculpture 2</button>
+    <!-- <div id="mario-chat">
       <div id="chat-window">
         <div id="output">
 
@@ -16,7 +99,7 @@
         <input id="message" type="text" placeholder="Message"/>
         <button id="send">Send</button>
       </div>
-    </div>
-    <script src="/chat.js"></script>
+    </div> -->
+    <script src="/sync.js"></script>
   </body>
 </html>
