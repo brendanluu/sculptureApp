@@ -40,11 +40,14 @@ var socket = io.connect('http://localhost:4000');
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       io.emit('show1', 'data');
     });
     btn2.addEventListener('click',function(){
       io.emit('show2', 'data');
 =======
+=======
+>>>>>>> parent of c32bce9... Revert "sync models"
 =======
 >>>>>>> parent of c32bce9... Revert "sync models"
 =======
@@ -55,6 +58,9 @@ var socket = io.connect('http://localhost:4000');
       socket.emit('show2', 'data');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c32bce9... Revert "sync models"
+=======
 >>>>>>> parent of c32bce9... Revert "sync models"
 =======
 >>>>>>> parent of c32bce9... Revert "sync models"
