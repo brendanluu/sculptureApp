@@ -37,10 +37,10 @@ var socket = io.connect('http://localhost:4000');
     // Emit events
 
     btn1.addEventListener('click',function(){
-      socket.emit('show1', 'data');
+      io.emit('show1', 'data');
     });
     btn2.addEventListener('click',function(){
-      socket.emit('show2', 'data');
+      io.emit('show2', 'data');
     });
 
     //Listen for events
