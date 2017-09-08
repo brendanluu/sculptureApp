@@ -26,8 +26,10 @@ io.on('connection', function(socket){
 
   socket.on('show1',function(data){
     io.emit('show1',data);
+    io.emit('info1',data);
   });
   socket.on('show2',function(data){
     io.emit('show2',data);
+    io.emit('info2',data);
   });
 });
