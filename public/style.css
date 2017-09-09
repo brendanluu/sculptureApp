@@ -154,5 +154,7 @@ a-scene{
 @media screen and (min-width: 800px) {
   #starttext{
     text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
