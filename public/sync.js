@@ -1,6 +1,13 @@
 //Make connection
 var socket = io.connect(location.origin.replace('/^http', 'ws'));
 
+var startscreen = document.getElementById("startscreen");
+
+startscreen.addEventListener('click',function(){
+  startscreen.style.opacity = '0';
+  setTimeout(function(){startscreen.parentNode.removeChild(startscreen);}, 1000);
+});
+
 
 
     function initElement() {
