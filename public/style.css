@@ -1,6 +1,5 @@
 button{
   position: fixed;
-  bottom: 0;
   background-color: white;
   border: none;
   color: black;
@@ -31,6 +30,11 @@ button:active{
   left: 50vw;
   color: black;
 }
+
+#buttons{
+  bottom: 50px;
+  position: fixed;
+}
 br {
 line-height: 200%;
 }
@@ -50,15 +54,74 @@ a-scene{
   height: 50vh;
   position: fixed;
   top: 0;
+  cursor: move;
 }
 
 .info{
   margin-top: 52vh;
-  margin-left: 12px;
-  margin-right: 12px;
   margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  max-width: 660px;
 }
 
 #info2{
   display: none;
+}
+
+@media screen and (min-width: 1100px) {
+    #buttons{
+      top:0;
+      width: 70vw;
+    }
+    #button2{
+      left:85%;
+    }
+    #button2:focus{
+      left: 85%;
+      color: black;
+    }
+    #button1{
+      left: 70%;
+    }
+    button{
+      width: 15vw;
+      border-top: none;
+      border-top-color: #d8d8d8;
+      border-top-width: 2px;
+      border-bottom: solid;
+      border-bottom-color: #d8d8d8;
+      border-bottom-width: 2px;
+      border-right: solid;
+      border-right-width: 1px;
+      border-right-color: #d8d8d8;
+      font-weight: bold;
+    }
+
+    a-scene{
+      height: 100vh;
+      width: 70vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .info{
+      margin-top: 70px;
+      margin-bottom: 0px;
+      margin-right: auto;
+      padding-left: 12px;
+      padding-right: 12px;
+      max-width: 660px;
+      width: 26%;
+      left: 70vw;
+      margin-left: 71vw;
+    }
+
+
+
+
 }
